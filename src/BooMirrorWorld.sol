@@ -3,11 +3,11 @@
 pragma solidity ^0.8;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 
 // BooMirrorWorld is the place where boo's live to create xBOO. Grim becomes her evil half, ace
 // This contract handles swapping to and from xBoo, SpookySwap's staking token.
-contract BooMirrorWorld is ERC20("Boo MirrorWorld", "xBOO") {
+contract BooMirrorWorld is ERC20Permit("Boo MirrorWorld", "xBOO") {
     using SafeMath for uint256;
     IERC20 public boo;
 
