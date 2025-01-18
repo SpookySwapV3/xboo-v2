@@ -227,6 +227,11 @@ contract BrewBooV3 is Ownable, ReentrancyGuard {
         emit LogConvert(_msgSender(), boo, _amt, i);
     }
 
+    function donate(uint booAmount) external {
+        IERC20(boo).transferFrom(msg.sender, xboo, booAmount);
+        emit LogConvert(_msgSender(), boo, booAmount, booAmount);
+    }
+
     // internal functions
 
     function _convertStep(
