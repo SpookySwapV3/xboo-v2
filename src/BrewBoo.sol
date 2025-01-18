@@ -25,7 +25,7 @@ contract BrewBooV3 is Ownable, ReentrancyGuard {
     address private immutable boo;
     address private immutable wftm;
     uint public devCut;  // in basis points aka parts per 10,000 so 5000 is 50%, cap of 50%, default is 0
-    uint public constant BOUNTY_FEE = 10;
+    uint public BOUNTY_FEE = 10;
     address public devAddr;
     //uint public slippage = 9;
 
@@ -146,6 +146,10 @@ contract BrewBooV3 is Ownable, ReentrancyGuard {
         devAddr = _addr;
 
         emit SetDevAddr(_addr);
+    }
+
+    function setBounty(uint _amt) external onlyOwner {
+        BOUNTY_FEE = _amt;
     }
     // End owner functions
 
