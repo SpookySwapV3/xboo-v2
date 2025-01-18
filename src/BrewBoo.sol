@@ -90,7 +90,7 @@ contract BrewBooV3 is Ownable, ReentrancyGuard {
     }
 
     function setBridgeRoute(uint index, address token) external onlyAuth {
-        require(index > 2, "first 3 bridge tokens are immutable");
+        //require(index > 2, "first 3 bridge tokens are immutable");
         require(index <= bridgeRouteAmount, "index too large, use next free slot");
 
         bridgeRoute[index] = token;

@@ -12,8 +12,8 @@ contract BooMirrorWorld is ERC20("Boo MirrorWorld", "xBOO"), ERC20Permit("Boo Mi
     IERC20 public boo;
 
     // Define the Boo token contract
-    constructor(IERC20 _boo) {
-        boo = _boo;
+    constructor(address _boo) {
+        boo = IERC20(_boo);
     }
 
     // Locks Boo and mints xBoo
